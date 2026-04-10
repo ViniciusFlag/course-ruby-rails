@@ -1,4 +1,7 @@
+require_relative 'crud'
+
 class Student
+    include Crud
     attr_accessor :first_name, :last_name, :email, :username, :password # o attr_accessos é um short construtor que cria os metodos de getter e setter
     # Ao criar uma classe em ruby, os atributos devem comecar com um simbolo(@)
     
@@ -42,3 +45,7 @@ end
 
 alice = Student.new("Alice", "Bandeira", "alice1", "alice.bandeira@mail.com", "senha1")
 puts alice
+
+hashed_password = alice.create_hash_digest(alice.password)
+
+puts hashed_password
