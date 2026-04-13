@@ -27,9 +27,19 @@ Comando rails:
 
 # Para criar um controller
 -- rails generate controller pages
+-- rails generate scaffold NomeTabela campo:tipo # Para gerar a estrutura de banco de dados
+- rails db:migrate # executa as migrations do banco de dados
+-- rails routes # mostra as rotas de cada função
+-- rails routes --expanded -- mostra as rotas mais detalhadamente e com uma visualização melhor
+
+
 
 # Configuração do VSCode
 "emmet.includeLanguages": {
     "*.erb": "html",
     "ruby": "html"
 }
+
+#Heroku
+brew install heroku/brew/heroku -- comando para instalar o heroku
+heroku login
