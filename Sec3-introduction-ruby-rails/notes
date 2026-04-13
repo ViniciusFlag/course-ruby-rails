@@ -27,3 +27,9 @@ Comando rails:
 
 # Para criar um controller
 -- rails generate controller pages
+
+# Configuração do VSCode
+"emmet.includeLanguages": {
+    "*.erb": "html",
+    "ruby": "html"
+}
