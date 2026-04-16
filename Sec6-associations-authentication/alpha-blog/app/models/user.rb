@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_many :articles # indica que um usuario pode ter muitos articles
+    before_save { self.email = email.downcase } # antes de salvar, deixa o campo de email em minusculo
 
     validates :username, presence: true, 
                         uniqueness: { case_sensitive: false }, 
