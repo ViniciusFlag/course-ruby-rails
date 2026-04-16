@@ -1,0 +1,10 @@
+# Load the Rails application.
+require_relative "application"
+
+# Initialize the Rails application.
+Rails.application.initialize!
+
+# Elimina o campo adicional de erro nos fields
+ActionView::Base.field_error_proc = Proc.new do |html_tag, intance|
+    html_tag.html_safe
+end
