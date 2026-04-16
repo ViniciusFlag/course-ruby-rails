@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
     # conteudo do params retornado do submit de new: Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Hello Rails", "description"=>"Hello Rails description"}, "commit"=>"Save Article"}
     def create
         @article = Article.new(article_params)
+        @article.user = User.first
         if @article.save
             flash[:notice] = "Article was successfully created."
             redirect_to @article # article_path(@article)
