@@ -36,6 +36,7 @@ Comando rails:
 -- rails db:rollback
 -- rails routes # mostra as rotas de cada função
 -- rails routes --expanded -- mostra as rotas mais detalhadamente e com uma visualização melhor
+-- rails routes --expanded | grep edit -- mostra as rotas mais detalhadamente e especifica como edit
 -- rails generate migration crate_articles # cria uma migration vazia
 
 
