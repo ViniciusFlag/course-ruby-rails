@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :articles # indica que um usuario pode ter muitos articles
+    has_many :articles, dependent: :destroy # indica que um usuario pode ter muitos articles, dependent faz associacao com a relacao de users, ou seja, se um usuario for deletea, tudo o que estiver relacionado a ele, tabem sera excluido, no caso, articles
     before_save { self.email = email.downcase } # antes de salvar, deixa o campo de email em minusculo
 
     validates :username, presence: true, 
