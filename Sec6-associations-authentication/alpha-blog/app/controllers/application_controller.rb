@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
       # para verificar, teremos que transformar o valor do current_user em booleano para saber se ele se mantem conectado ou nao, para isso usaremos a expressão (!!)
       !!current_user
   end
+
+  # este metodo fara a verificaçao se o usuario nao esta logado 
+  def require_user 
+    if !logged_in?
+        flash[:alert] = "You mus be logged in o perform that action!"
+        redirect_to login_path
+    end
+  end
 end

@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy] # isto sera executado antes de qualquer outra ação, o only, faz com que apenas o que estiver nele tenha acesso ao set_article
+    before_action :require_user, except: [:show, :index] # antes de qualquer acao, sera chamado a funcao, exceto a show e index que serao publicas
+    before_action :require_same_user, only: [:edit, :update, :destroy]
 
     # article/id
     def show 
@@ -53,4 +55,13 @@ class ArticlesController < ApplicationController
     def article_params
         params.require(:article).permit(:title, :description)
     end
+
+    # se o usuario atual nao for o mesmo do criado do atigo, nao podera fazer algumas determinadas acoes
+    def require_same_user
+        if current_user != @article.user
+            flash[:alert] = "You can only edit or delete your onw artcle!"
+            redirect_to @article
+        end
+    end
+
 end
