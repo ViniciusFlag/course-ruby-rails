@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
 
     # se o usuario atual nao for o mesmo do criado do atigo, nao podera fazer algumas determinadas acoes
     def require_same_user
-        if current_user != @article.user
+        if current_user != @article.user && !current_user.admin?
             flash[:alert] = "You can only edit or delete your onw artcle!"
             redirect_to @article
         end
