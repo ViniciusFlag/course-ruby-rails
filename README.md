@@ -53,3 +53,6 @@ heroku login
 # form helper
 -- é possivel criar um elemento que vai auxiliar seu view com formularios, a definição é feita destas formas: 
 -- 1 (escopos): <%= form_with scope: :article, url: article_path, local: true do |f|%> #define um escopo ou modelo que fornece o nome do modelo como simbolo
+
+# Testes automatizados
+-- rails test
