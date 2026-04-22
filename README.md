@@ -18,6 +18,7 @@ gem install bundler
 gem install webpacker # opicional
 gem install rails # pode ser colocado a versão também colocando -v 0.0.0 (numero da versão)
 rails new nome_projeto # comando para criar um novo projeto em rails
+bundle install --without production # faz a configuracao de bundle menos o group production
 
 Outros comandos:
 gem list rails # lista as gems local
