@@ -56,3 +56,4 @@ heroku login
 
 # Testes automatizados
 -- rails test
+os teste são executados individualemente e a cada teste, é feito a inclusão no banco e em seguida o mesmo é limpo
