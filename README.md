@@ -46,7 +46,10 @@ Comando rails:
     "ruby": "html"
 }
 
-#Heroku
+# git
+-- rm -rf .git # remove arquivo .git
+
+# Heroku
 brew install heroku/brew/heroku -- comando para instalar o heroku
 heroku login
 
